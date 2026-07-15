@@ -1,5 +1,8 @@
 intro:
   text: "Matteo Veroni. Computer Science Engineer. Embedded Systems, Cybersecurity, and Software Engineering."
+  action:
+    label: " Download Europass CV"
+    link: "/Europass_CV.pdf"
 
 work:
   label: "Work Experience<br />2019 - Present"

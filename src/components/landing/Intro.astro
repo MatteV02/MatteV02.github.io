@@ -1,6 +1,7 @@
 ---
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const { data } = Astro.props;
 ---
@@ -15,6 +16,14 @@ const { data } = Astro.props;
       >
         {data?.text}
       </Text>
+      
+      {data?.action && (
+        <div class="lg:col-span-2 lg:col-start-3 flex mt-4">
+          <Button isLink href={data.action.link} download variant="default" size="base">
+            {data.action.label}
+          </Button>
+        </div>
+      )}
     </div>
   </Wrapper>
 </section>

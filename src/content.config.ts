@@ -29,6 +29,10 @@ const pages = defineCollection({
     z.object({
       intro: z.object({
         text: z.string(),
+        action: z.object({
+          label: z.string(),
+          link: z.string(),
+        }).optional(),
       }),
       work: z
         .object({
