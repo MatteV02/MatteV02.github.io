@@ -7,6 +7,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   
-  site: 'https://yourdomain.com',
+  site: 'https://MatteV02.github.io',
+  base: '/personal-website',
   integrations: [sitemap()]
 });

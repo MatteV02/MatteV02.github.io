@@ -1,0 +1,16 @@
+location: "Helsinki, Finland"
+role: "Creative Technologist"
+links:
+  - href: "#work"
+    text: "Work"
+  - href: "#projects"
+    text: "Projects"
+  - href: "#education"
+    text: "Education"
+  - href: "#speaking"
+    text: "Speaking"
+  - href: "/system/overview"
+    text: "Components"
+action:
+  text: "Download"
+  href: "https://lexingtonthemes.com/templates/primapersona"
