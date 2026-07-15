@@ -17,7 +17,7 @@ work:
       imageAlt: "Embedded systems visualization"
       containImage: true
     - year: "2025 - 2026"
-      title: "Expert Teacher"
+      title: "High School Teacher"
       description: "Taught Python and Videogame development to high school students. Delivered Mathematics and Physics lessons aligning with national guidelines."
       category: "Liceo M. Fanti"
       logo: "../images/logos/liceo-fanti.png"
