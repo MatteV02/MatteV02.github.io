@@ -54,7 +54,7 @@ const { label, title, items } = data || {};
               </Text>
 
               <div class="flex items-center gap-3 lg:ml-auto lg:col-start-4">
-                {item.logo && <Image src={item.logo} alt="" class="w-8 h-8 object-contain shrink-0" />}
+                {item.logo && <Image src={item.logo} alt="" class:list={["w-8 h-8 object-contain shrink-0", item.logo.format === 'svg' && "dark:invert"]} />}
                 <Text
                   tag="p"
                   variant="textXS"

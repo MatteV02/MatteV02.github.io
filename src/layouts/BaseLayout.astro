@@ -9,6 +9,24 @@ import Navigation from "@/components/global/Navigation.astro";
 <html lang="en" class="scroll-smooth">
   <head>
     <BaseHead />
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+    
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
   </head>
   <body class="bg-white dark:bg-base-950 flex flex-col h-svh">
     <Navigation />
