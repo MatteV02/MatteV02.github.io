@@ -1,68 +1,32 @@
 ---
 // Assets
 import { Image } from "astro:assets";
-import one from "@/images/projects/one.png";
-import two from "@/images/projects/two.png";
-import three from "@/images/projects/three.png";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-const featuredProjects = [
-  {
-    year: "2026",
-    title: "Domestic Grid",
-    description:
-      "A modular home systems platform mapping energy, climate, and space constraints into actionable layouts, automation rules, and long-term upgrade paths.",
-    category: "Residential Systems Design",
-    image: one,
-    imageAlt:
-      "Modern home interior with overlaid system diagrams for energy, climate, and spatial planning.",
-  },
-  {
-    year: "2026",
-    title: "Type Pressure",
-    description:
-      "A typography study exploring rhythm, hierarchy, and legibility under extreme scale, density, and motion constraints across digital interfaces.",
-    category: "Typography Experiments",
-    image: two,
-    imageAlt:
-      "High-contrast typographic compositions testing scale, spacing, and motion.",
-  },
-  {
-    year: "2026",
-    title: "Haul State",
-    description:
-      "A design and systems exploration of electric truck interfaces, focusing on load awareness, range management, and driver decision-making under real-world constraints.",
-    category: "Transportation Systems",
-    image: three,
-    imageAlt:
-      "Electric truck cockpit interface showing load metrics, range estimates, and system status.",
-  },
-];
+
+const { data } = Astro.props;
+const { label, title, items } = data || {};
 ---
 
 <section class="scroll-mt-32" id="projects">
   <Wrapper variant="standard" class="py-12 lg:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-4 items-start">
       <div class="lg:col-start-2">
-        <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300"
-          >Featured Projects
-          <br />
-          2026 - Now</Text
-        >
+        <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300" set:html={label} />
       </div>
       <Text
         tag="h2"
         variant="textXL"
         class="font-semibold leading-snug text-left tracking-tighter lg:col-span-2 text-base-900 dark:text-white"
       >
-        Projects
+        {title}
       </Text>
     </div>
 
     <div class="flex flex-col gap-12 mt-8">
       {
-        featuredProjects.map((project) => (
+        items?.map((project) => (
           <article class="py-12 border-t border-base-200 dark:border-base-800">
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 items-start">
               <Text
@@ -86,13 +50,16 @@ const featuredProjects = [
               >
                 {project.description}
               </Text>
-              <Text
-                tag="p"
-                variant="textXS"
-                class="text-base-600 dark:text-base-300 uppercase lg:ml-auto lg:col-start-4"
-              >
-                {project.category}
-              </Text>
+              <div class="flex items-center gap-3 lg:ml-auto lg:col-start-4">
+                {project.logo && <Image src={project.logo} alt="" class="w-8 h-8 object-contain shrink-0" />}
+                <Text
+                  tag="p"
+                  variant="textXS"
+                  class="text-base-600 dark:text-base-300 uppercase"
+                >
+                  {project.category}
+                </Text>
+              </div>
             </div>
             <Image
               width={1200}

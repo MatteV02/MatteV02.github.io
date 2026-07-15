@@ -8,8 +8,8 @@ links:
     text: "Projects"
   - href: "#education"
     text: "Education"
-  - href: "#speaking"
-    text: "Speaking"
+  - href: "#skills"
+    text: "Skills"
 action:
   text: "GitHub"
   href: "https://github.com/MatteV02"
