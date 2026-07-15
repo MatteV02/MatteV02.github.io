@@ -1,7 +1,18 @@
 ---
+export interface Props {
+  variant?: "default" | "accent" | "muted" | "none";
+  size?: "xxs" | "xs" | "sm" | "base" | "md" | "lg" | "xl";
+  onlyIconSize?: any;
+  iconOnly?: boolean;
+  gap?: "xs" | "sm" | "base" | "md" | "lg";
+  isLink?: boolean;
+  class?: string;
+  href?: string;
+  [key: string]: any;
+}
 const {
-  variant,
-  size,
+  variant = "default",
+  size = "base",
   onlyIconSize,
   iconOnly = false,
   gap,
