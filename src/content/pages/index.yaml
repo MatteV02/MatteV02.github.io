@@ -79,25 +79,25 @@ skills:
   items:
     - period: "Languages"
       title: "Programming & Frameworks"
-      description: "C/C++, Java, Python, Kotlin, Bash Scripting, Rust, PyTorch, Flask, SQL, HTML."
+      description: "C/C++ , Java , Python , Kotlin , Bash Scripting 󱆃, Rust , SQL 󰆼, HTML , PyTorch, Flask."
       category:
         label: "Software"
         href: "#_"
     - period: "Systems"
       title: "Infrastructure & Security"
-      description: "Linux, Kubernetes, Docker, Cloud computing, Cybersecurity, Embedded systems, Network architectures, Firewalls (IPtables)."
+      description: "Linux , Kubernetes 󱃾, Docker , Cloud computing , Cybersecurity 󰒒, Embedded systems , Network architectures 󰛳, Firewalls 󰒄 (IPtables)."
       category:
         label: "DevOps"
         href: "#_"
     - period: "Soft Skills"
       title: "Management & Interpersonal"
-      description: "Project Management, Public Speaking, Team working, Empathy, Active listening."
+      description: "Project Management , Public Speaking, Team working, Empathy, Active listening."
       category:
         label: "Interpersonal"
         href: "#_"
     - period: "Certifications"
       title: "Languages & Misc"
-      description: "English C1 (TOEIC), Italian (Mother tongue). Driving Licence B."
+      description: "English C1 (TOEIC), Italian."
       category:
         label: "Languages"
         href: "#_"

@@ -22,7 +22,7 @@ const { location = "", role = "", links = [], action } = topBarEntry?.data || {}
       <Text
         tag="p"
         variant="textXS"
-        class="text-base-600 dark:text-base-300 tracking-tight font-base"
+        class="text-base-600 dark:text-base-300 tracking-tight font-sans"
       >
         {location}<br />{role}
       </Text>
@@ -39,7 +39,7 @@ const { location = "", role = "", links = [], action } = topBarEntry?.data || {}
         }
       </div>
       <a href={action?.href}
-        class="text-base-600 dark:text-base-300 text-xs tracking-tight font-base ml-auto"
+        class="text-base-600 dark:text-base-300 text-xs tracking-tight font-sans ml-auto"
         >{action?.text}
       </a>
     </div>

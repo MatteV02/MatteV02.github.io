@@ -1,28 +1,48 @@
-# Prima Persona
+# Nerd Fonts
 
-![Theme preview](https://lexingtonthemes.com/OpenGraph/primapersona/twitter.png)
+This is an archived font from the Nerd Fonts release v3.2.1.
 
+For more information see:
+* https://github.com/ryanoasis/nerd-fonts/
+* https://github.com/ryanoasis/nerd-fonts/releases/latest/
 
-## Links
-- **Theme specs:** https://lexingtonthemes.com/templates/primapersona  
-- **Documentation:** https://lexingtonthemes.com/documentation  
-- **Changelog:** https://lexingtonthemes.com/changelog/primapersona  
-- **Support:** https://lexingtonthemes.com/legal/support/  
-- **Get the bundle:** https://lexingtonthemes.com  
+# 0xProto
 
-## Requirements
-- Node.js 18 or 20 (LTS recommended)
-- npm
+An opinionated font for software engineers.
 
-## Commands
+For more information have a look at the upstream website: https://github.com/0xType/0xProto
 
-All commands are run from the root of the project, from a terminal:
+Version: 1.603
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Install dependencies                             |
-| `npm run dev`          | Start local dev server                           |
-| `npm run build`        | Build production site to `./dist/`               |
-| `npm run preview`     | Preview the production build locally             |
-| `npm run astro ...`    | Run Astro CLI commands                           |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+## Which font?
+
+### TL;DR
+
+* Pick your font family:
+  * If you are limited to monospaced fonts (because of your terminal, etc) then pick a font with `Nerd Font Mono` (or `NFM`).
+  * If you want to have bigger icons (usually around 1.5 normal letters wide) pick a font without `Mono` i.e. `Nerd Font` (or `NF`). Most terminals support this, but ymmv.
+  * If you work in a proportional context (GUI elements or edit a presentation etc) pick a font with `Nerd Font Propo` (or `NFP`).
+
+### Ligatures
+
+Ligatures are generally preserved in the patched fonts.
+Nerd Fonts `v2.0.0` had no ligatures in the `Nerd Font Mono` fonts, this has been dropped with `v2.1.0`.
+If you have a ligature-aware terminal and don't want ligatures you can (usually) disable them in the terminal settings.
+
+### Explanation
+
+Once you narrow down your font choice of family (`Droid Sans`, `Inconsolata`, etc) and style (`bold`, `italic`, etc) you have 2 main choices:
+
+#### `Option 1: Download already patched font`
+
+ * For a stable version download a font package from the [release page](https://github.com/ryanoasis/nerd-fonts/releases)
+ * Direct links for [0xProto.zip](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/0xProto.zip) or [0xProto.tar.xz](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/0xProto.tar.xz)
+
+#### `Option 2: Patch your own font`
+
+ * Patch your own variations with the various options provided by the font patcher (i.e. not include all symbols for smaller font size)
+
+For more information see: [The FAQ](https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting#which-font)
+
+[SIL-RFN]:http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web_fonts_and_RFNs#14cbfd4a
+
