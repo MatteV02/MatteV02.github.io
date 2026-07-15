@@ -8,6 +8,5 @@ export default defineConfig({
   },
   
   site: 'https://MatteV02.github.io',
-  base: '/personal-website',
   integrations: [sitemap()]
 });
