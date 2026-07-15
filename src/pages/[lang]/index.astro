@@ -1,0 +1,29 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'it' } },
+  ];
+}
+import { getEntry } from "astro:content";
+// Fundation
+import BaseLayout from "@/layouts/BaseLayout.astro";
+// Sections
+import Intro from "@/components/landing/Intro.astro";
+import Work from "@/components/landing/Work.astro";
+import Projects from "@/components/landing/Projects.astro";
+import Education from "@/components/landing/Education.astro";
+import Skills from "@/components/landing/Skills.astro";
+
+const { lang } = Astro.params;
+const indexPage = await getEntry("pages", `index_${lang}`);
+const { intro, work, projects, education, skills } = indexPage?.data || {};
+---
+
+<BaseLayout>
+  <Intro data={intro} />
+  <Work data={work} />
+  <Education data={education} />
+  <Projects data={projects} />
+  <Skills data={skills} />
+</BaseLayout>

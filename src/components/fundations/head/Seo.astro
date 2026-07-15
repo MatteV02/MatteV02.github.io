@@ -1,8 +1,9 @@
 ---
 import { getEntry } from "astro:content";
 
-const topBar = await getEntry("globals", "top_bar");
-const pageTitle = topBar?.data.name || "Portfolio";
+const currentLocale = Astro.currentLocale || "en";
+const topBar = await getEntry("globals", `top_bar_${currentLocale}`);
+const pageTitle = topBar?.data?.name || "matteo.veroni";
 ---
 
 <title>{pageTitle}</title>

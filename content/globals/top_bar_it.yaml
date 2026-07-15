@@ -1,0 +1,15 @@
+name: "matteo.veroni"
+location: "Carpi, Italia"
+role: "Sviluppatore cloud e analista di sicurezza"
+links:
+  - href: "#work"
+    text: "Esperienza"
+  - href: "#projects"
+    text: "Progetti"
+  - href: "#education"
+    text: "Formazione"
+  - href: "#skills"
+    text: "Competenze"
+action:
+  text: "GitHub "
+  href: "https://github.com/MatteV02"

@@ -8,5 +8,13 @@ export default defineConfig({
   },
   
   site: 'https://MatteV02.github.io',
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "it"],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false
+    }
+  },
   integrations: [sitemap()]
 });

@@ -7,14 +7,19 @@ import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { getEntry } from "astro:content";
 
-const topBarEntry = await getEntry("globals", "top_bar");
+const currentLocale = Astro.currentLocale || "en";
+const topBarEntry = await getEntry("globals", `top_bar_${currentLocale}`);
 const { location = "", role = "", links = [], action } = topBarEntry?.data || {};
+
+// Determine opposite language for toggle
+const nextLang = currentLocale === "en" ? "it" : "en";
+const toggleLabel = currentLocale === "en" ? "IT" : "EN";
 ---
 
 <nav class="bg-white dark:bg-base-950 fixed top-0 z-10 w-full">
   <Wrapper variant="standard" class="py-2">
     <div class="grid grid-cols-3 lg:grid-cols-4 items-start">
-      <a href="/" class="-mt-1 flex">
+      <a href={`/${currentLocale}/`} class="-mt-1 flex">
         <Logo
           class="text-base-600 dark:text-base-300 text-xs tracking-tight font-base-900"
         />
@@ -43,6 +48,9 @@ const { location = "", role = "", links = [], action } = topBarEntry?.data || {}
           class="text-base-600 dark:text-base-300 text-xs tracking-tight font-sans"
           >{action?.text}
         </a>
+        <a href={`/${nextLang}/`} id="lang-toggle" class="text-base-600 dark:text-base-300 hover:text-base-900 dark:hover:text-white transition-colors text-xs font-bold font-sans">
+          {toggleLabel}
+        </a>
         <button id="theme-toggle" class="text-base-600 dark:text-base-300 hover:text-base-900 dark:hover:text-white transition-colors cursor-pointer" aria-label="Toggle theme">
           <span class="dark:hidden"></span>
           <span class="hidden dark:inline"></span>
@@ -62,6 +70,13 @@ const { location = "", role = "", links = [], action } = topBarEntry?.data || {}
   }
 
   document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
+
+  document.getElementById("lang-toggle")?.addEventListener("click", (e) => {
+    const target = e.currentTarget as HTMLAnchorElement;
+    const href = target?.getAttribute("href") || "";
+    if (href.includes("/it/")) localStorage.setItem("primapersona_lang", "it");
+    if (href.includes("/en/")) localStorage.setItem("primapersona_lang", "en");
+  });
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (e.matches) {

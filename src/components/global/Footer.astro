@@ -7,7 +7,8 @@ import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { getEntry } from "astro:content";
 
-const footerEntry = await getEntry("globals", "footer");
+const currentLocale = Astro.currentLocale || "en";
+const footerEntry = await getEntry("globals", `footer_${currentLocale}`);
 const { links = [] } = footerEntry?.data || {};
 const year = new Date().getFullYear();
 ---

@@ -1,7 +1,8 @@
 ---
 import { getEntry } from "astro:content";
 
-const topBarEntry = await getEntry("globals", "top_bar");
+const currentLocale = Astro.currentLocale || "en";
+const topBarEntry = await getEntry("globals", `top_bar_${currentLocale}`);
 const { name = "matteo.v" } = topBarEntry?.data || {};
 
 const { class: className = "", ...rest } = Astro.props;

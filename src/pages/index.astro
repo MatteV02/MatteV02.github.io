@@ -1,22 +1,26 @@
 ---
-import { getEntry } from "astro:content";
-// Fundation
-import BaseLayout from "@/layouts/BaseLayout.astro";
-// Sections
-import Intro from "@/components/landing/Intro.astro";
-import Work from "@/components/landing/Work.astro";
-import Projects from "@/components/landing/Projects.astro";
-import Education from "@/components/landing/Education.astro";
-import Skills from "@/components/landing/Skills.astro";
-
-const indexPage = await getEntry("pages", "index");
-const { intro, work, projects, education, skills } = indexPage?.data || {};
+// This page redirects the user to their preferred language automatically.
 ---
 
-<BaseLayout>
-  <Intro data={intro} />
-  <Work data={work} />
-  <Education data={education} />
-  <Projects data={projects} />
-  <Skills data={skills} />
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>matteo.veroni</title>
+  <script is:inline>
+    // 1. Check if user explicitly chose a language previously
+    let preferredLang = localStorage.getItem("primapersona_lang");
+    
+    // 2. If not, auto-detect from browser
+    if (!preferredLang) {
+      const browserLang = navigator.language || navigator.userLanguage || "en";
+      preferredLang = browserLang.toLowerCase().startsWith("it") ? "it" : "en";
+    }
+
+    // 3. Redirect immediately to the correct locale path
+    window.location.replace(`/${preferredLang}/`);
+  </script>
+</head>
+<body style="background-color: #0f0f0f;">
+</body>
+</html>
