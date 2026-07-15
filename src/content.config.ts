@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 const globals = defineCollection({
   loader: glob({ pattern: "**/*.yaml", base: "./src/content/globals" }),
   schema: z.object({
+    name: z.string().optional(),
     location: z.string().optional(),
     role: z.string().optional(),
     links: z.array(

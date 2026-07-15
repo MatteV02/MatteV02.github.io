@@ -1,5 +1,6 @@
-location: "Helsinki, Finland"
-role: "Creative Technologist"
+name: "matteo.veroni"
+location: "Carpi, Italy"
+role: "Cloud developer and security analyst"
 links:
   - href: "#work"
     text: "Work"
@@ -9,8 +10,6 @@ links:
     text: "Education"
   - href: "#speaking"
     text: "Speaking"
-  - href: "/system/overview"
-    text: "Components"
 action:
-  text: "Download"
-  href: "https://lexingtonthemes.com/templates/primapersona"
+  text: "GitHub"
+  href: "https://github.com/MatteV02"

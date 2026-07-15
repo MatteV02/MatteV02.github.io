@@ -1,7 +1,10 @@
 ---
+import { getEntry } from "astro:content";
+
+const topBarEntry = await getEntry("globals", "top_bar");
+const { name = "matteo.v" } = topBarEntry?.data || {};
+
 const { class: className = "", ...rest } = Astro.props;
 ---
 
-<span class={className} {...rest}>alessandro.p</span>
-
-
+<span class={className} {...rest}>{name}</span>
