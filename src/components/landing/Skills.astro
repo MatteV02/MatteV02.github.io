@@ -34,7 +34,7 @@ const { label, title, items } = data || {};
                 variant="textXS"
                 class="text-base-600 dark:text-base-300 uppercase"
               >
-                {item.period} — {item.category.label}
+                {item.period} — {item.category}
               </Text>
               {/* Title */}
               <Text
@@ -48,18 +48,10 @@ const { label, title, items } = data || {};
               <Text
                 tag="p"
                 variant="textSM"
-                class="text-base-600 dark:text-base-300"
+                class="text-base-600 dark:text-base-300 lg:col-span-2"
               >
                 {item.description}
               </Text>
-              {/* Category (linked, original position) */}
-              <a
-                href={item.category.href}
-                class=" lg:ml-auto text-base-900 dark:text-white hover:text-accent-600 transition"
-              >
-                <span class="sr-only"> Visit {item.category.label}</span>
-                <ArrowRight class="size-4" />
-              </a>
             </div>
           </article>
         ))

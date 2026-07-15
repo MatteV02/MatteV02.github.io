@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
 
 const { data } = Astro.props;
 const { label, title, items } = data || {};
@@ -62,6 +63,15 @@ const { label, title, items } = data || {};
                 >
                   {item.category}
                 </Text>
+                {item.href && (
+                  <a
+                    href={item.href}
+                    class="ml-2 text-base-900 dark:text-white hover:text-accent-600 transition"
+                  >
+                    <span class="sr-only">Visit {item.category}</span>
+                    <ArrowRight class="size-4" />
+                  </a>
+                )}
               </div>
             </div>
           </article>

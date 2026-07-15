@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
 
 const { data } = Astro.props;
 const { label, title, items } = data || {};
@@ -59,6 +60,15 @@ const { label, title, items } = data || {};
                 >
                   {project.category}
                 </Text>
+                {project.href && (
+                  <a
+                    href={project.href}
+                    class="ml-2 text-base-900 dark:text-white hover:text-accent-600 transition"
+                  >
+                    <span class="sr-only">Visit {project.category}</span>
+                    <ArrowRight class="size-4" />
+                  </a>
+                )}
               </div>
             </div>
             {project.image && project.imageAlt && (
