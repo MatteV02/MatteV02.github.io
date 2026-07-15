@@ -41,8 +41,9 @@ const pages = defineCollection({
               description: z.string(),
               category: z.string(),
               logo: image().optional(),
-              image: image(),
-              imageAlt: z.string(),
+              image: image().optional(),
+              imageAlt: z.string().optional(),
+              containImage: z.boolean().optional(),
             })
           ),
         })
@@ -58,8 +59,9 @@ const pages = defineCollection({
               description: z.string(),
               category: z.string(),
               logo: image().optional(),
-              image: image(),
-              imageAlt: z.string(),
+              image: image().optional(),
+              imageAlt: z.string().optional(),
+              containImage: z.boolean().optional(),
             })
           ),
         })

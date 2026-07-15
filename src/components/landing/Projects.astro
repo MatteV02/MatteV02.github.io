@@ -61,15 +61,28 @@ const { label, title, items } = data || {};
                 </Text>
               </div>
             </div>
-            <Image
-              width={1200}
-              height={630}
-              src={project.image}
-              alt={project.imageAlt}
-              loading="lazy"
-              decoding="async"
-              class="size-full aspect-4/2 rounded-4xl mt-12 object-cover object-center"
-            />
+            {project.image && project.imageAlt && (
+              project.containImage ? (
+                <Image
+                  width={1200}
+                  src={project.image}
+                  alt={project.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto rounded-4xl mt-12 object-contain object-center"
+                />
+              ) : (
+                <Image
+                  width={1200}
+                  height={630}
+                  src={project.image}
+                  alt={project.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  class="size-full aspect-[1200/630] rounded-4xl mt-12 object-cover object-center"
+                />
+              )
+            )}
           </article>
         ))
       }
