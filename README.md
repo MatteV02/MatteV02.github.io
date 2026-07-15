@@ -1,48 +1,76 @@
-# Nerd Fonts
+# Matteo Veroni - Personal Portfolio
 
-This is an archived font from the Nerd Fonts release v3.2.1.
+A sleek, highly performant, and fully bilingual personal portfolio website built with **Astro** and **Tailwind CSS v4**.
 
-For more information see:
-* https://github.com/ryanoasis/nerd-fonts/
-* https://github.com/ryanoasis/nerd-fonts/releases/latest/
+This repository serves as the digital resume and portfolio for Matteo Veroni, a Computer Science Engineer specializing in Embedded Systems, Cybersecurity, and Software Engineering.
 
-# 0xProto
+## ✨ Features
 
-An opinionated font for software engineers.
+- **Blazing Fast (SSG):** Built with Astro, the site is statically generated for maximum performance and instant load times.
+- **Bilingual (EN & IT):** Fully supports English and Italian. It features an intelligent client-side router that automatically detects the user's browser language and redirects them instantly. A manual toggle is also provided and preferences are saved.
+- **Dark/Light Mode:** Includes a theme toggle that respects system preferences and persists the user's choice across sessions. SVGs and assets dynamically adapt to the active theme.
+- **Data-Driven Content:** All textual content, links, and experiences are managed cleanly through YAML files using Astro's Content Collections API. No need to touch the UI code to update your CV!
+- **Tailwind CSS v4:** Styled using the latest utility-first CSS framework for a beautiful, responsive, and maintainable design.
+- **SEO Optimized:** Built-in metadata, OpenGraph tags, and sitemap generation.
 
-For more information have a look at the upstream website: https://github.com/0xType/0xProto
+## 📂 Project Structure
 
-Version: 1.603
+```text
+/
+├── content/               # All website content lives here!
+│   ├── globals/           # Global elements (Top bar, Footer) in EN/IT
+│   ├── images/            # All static images, logos, and assets
+│   └── pages/             # Page content (Experience, Education, etc.) in EN/IT
+├── public/                # Static assets (Favicons, Fonts, CV PDF)
+├── src/
+│   ├── components/        # Reusable Astro UI components (Layout, Buttons, etc.)
+│   ├── layouts/           # Global layouts and HTML skeleton
+│   ├── pages/             # Astro routing (/[lang]/index.astro and the auto-router)
+│   ├── styles/            # Global CSS and Tailwind configuration
+│   └── content.config.ts  # Zod schemas validating the YAML content files
+└── astro.config.mjs       # Astro configuration and integrations
+```
 
-## Which font?
+## 🚀 Getting Started
 
-### TL;DR
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-* Pick your font family:
-  * If you are limited to monospaced fonts (because of your terminal, etc) then pick a font with `Nerd Font Mono` (or `NFM`).
-  * If you want to have bigger icons (usually around 1.5 normal letters wide) pick a font without `Mono` i.e. `Nerd Font` (or `NF`). Most terminals support this, but ymmv.
-  * If you work in a proportional context (GUI elements or edit a presentation etc) pick a font with `Nerd Font Propo` (or `NFP`).
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MatteV02/MatteV02.github.io.git
+   cd MatteV02.github.io
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### Ligatures
+### Running Locally
+To start the Astro development server with hot-module replacement (HMR):
+```bash
+npm run dev
+```
+Navigate to `http://localhost:4321` to view the site.
 
-Ligatures are generally preserved in the patched fonts.
-Nerd Fonts `v2.0.0` had no ligatures in the `Nerd Font Mono` fonts, this has been dropped with `v2.1.0`.
-If you have a ligature-aware terminal and don't want ligatures you can (usually) disable them in the terminal settings.
+### Building for Production
+To generate the static build:
+```bash
+npm run build
+```
+The optimized files will be output to the `dist/` directory, ready to be deployed to any static hosting service (GitHub Pages, Vercel, Netlify, etc.).
 
-### Explanation
+## 📝 How to Update Content
 
-Once you narrow down your font choice of family (`Droid Sans`, `Inconsolata`, etc) and style (`bold`, `italic`, etc) you have 2 main choices:
+You don't need to write code to update your experiences or skills! Simply navigate to the `content/` directory and edit the YAML files. 
 
-#### `Option 1: Download already patched font`
+For example, to update your English homepage content, edit `content/pages/index_en.yaml`. To update the top navigation links in Italian, edit `content/globals/top_bar_it.yaml`. 
 
- * For a stable version download a font package from the [release page](https://github.com/ryanoasis/nerd-fonts/releases)
- * Direct links for [0xProto.zip](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/0xProto.zip) or [0xProto.tar.xz](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/0xProto.tar.xz)
+If you add new images, place them in `content/images/` and reference their relative paths in the YAML files.
 
-#### `Option 2: Patch your own font`
+## 🛠️ Built With
 
- * Patch your own variations with the various options provided by the font patcher (i.e. not include all symbols for smaller font size)
-
-For more information see: [The FAQ](https://github.com/ryanoasis/nerd-fonts/wiki/FAQ-and-Troubleshooting#which-font)
-
-[SIL-RFN]:http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web_fonts_and_RFNs#14cbfd4a
-
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
