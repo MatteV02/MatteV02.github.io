@@ -16,8 +16,10 @@
     "tailwind-scrollbar-hide": "^4.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
-    "tailwindcss": "^4.3.1"
+    "tailwindcss": "^4.3.1",
+    "typescript": "^7.0.2"
   }
 }
