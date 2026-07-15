@@ -3,7 +3,7 @@ import { z } from 'astro:schema';
 import { glob } from 'astro/loaders';
 
 const globals = defineCollection({
-  loader: glob({ pattern: "**/*.yaml", base: "./src/content/globals" }),
+  loader: glob({ pattern: "**/*.yaml", base: "./content/globals" }),
   schema: z.object({
     name: z.string().optional(),
     location: z.string().optional(),
@@ -24,7 +24,7 @@ const globals = defineCollection({
 });
 
 const pages = defineCollection({
-  loader: glob({ pattern: "**/*.yaml", base: "./src/content/pages" }),
+  loader: glob({ pattern: "**/*.yaml", base: "./content/pages" }),
   schema: ({ image }) =>
     z.object({
       intro: z.object({
